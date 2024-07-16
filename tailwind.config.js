@@ -75,6 +75,10 @@ module.exports = {
       dropShadow: {
         three: "0px 5px 15px rgba(6, 8, 15, 0.05)",
       },
+      fontFamily: {
+        zillaslab: ["Zilla Slab"],
+        barlow: ["Barlow"],
+      },
     },
   },
   plugins: [],

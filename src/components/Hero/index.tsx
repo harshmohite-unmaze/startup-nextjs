@@ -15,8 +15,6 @@ const Hero = () => {
     setEmail("");
   };
 
-  console.log(email);
-
   return (
     <>
       <section
@@ -59,12 +57,12 @@ const Hero = () => {
                       type="email"
                       value={email}
                       onChange={handleEmail}
-                      className="w-[418px] rounded-lg bg-[#FFF] px-6 py-4 text-[#262626]"
+                      className="w-[418px] rounded-lg bg-[#FFF] px-6 py-4 text-xl text-[#262626]"
                       placeholder="Enter your email"
                     />
                     <button
                       type="submit"
-                      className="rounded-lg bg-primary px-6 py-4 font-medium text-[#262626]"
+                      className="rounded-lg bg-primary px-6 py-4 text-xl font-medium text-[#262626]"
                     >
                       Join the waitlist
                     </button>
