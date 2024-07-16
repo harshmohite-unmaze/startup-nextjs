@@ -9,11 +9,11 @@ const Features = () => {
         <div className="container">
           <SectionTitle
             title="Main Features"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+            paragraph="Harness the power of Qwark and start your path to financial freedom today."
             center
           />
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-2">
             {featuresData.map((feature) => (
               <SingleFeature key={feature.id} feature={feature} />
             ))}

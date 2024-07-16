@@ -1,27 +1,44 @@
-import Link from "next/link";
+"use client";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 const Hero = () => {
+  const [email, setEmail] = useState<string>("");
+
+  const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Submit the form over here
+    setEmail("");
+  };
+
+  console.log(email);
+
   return (
     <>
       <section
         id="home"
-        className="relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+        className="relative z-10 flex min-h-screen flex-col justify-center overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-[800px] text-center">
+              <div className="mx-auto max-w-[750px] text-center">
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Free and Open-Source Next.js Template for Startup & SaaS
+                  Experience Financial Growth with Qwark&apos;s AI Engine
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                  Startup is free Next.js template for startups and SaaS
-                  business websites comes with all the essential pages,
-                  components, and sections you need to launch a complete
-                  business website, built-with Next 13.x and Tailwind CSS.
+                  Like quarks in the universe, Qwark is the foundation of your
+                  financial success. Our AI-powered engine provides precise,
+                  personalized wealth management solutions. Harness the power of
+                  Qwark and navigate your financial journey with atomic-level
+                  precision.
                 </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <Link
+                  {/* <Link
                     href="https://nextjstemplates.com/templates/saas-starter-startup"
                     className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                   >
@@ -32,12 +49,34 @@ const Hero = () => {
                     className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
                     Star on GitHub
-                  </Link>
+                  </Link> */}
                 </div>
+              </div>
+              <div>
+                <form onSubmit={handleSubmit}>
+                  <div className="flex justify-center gap-6">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={handleEmail}
+                      className="w-[418px] rounded-lg bg-[#FFF] px-6 py-4 text-[#262626]"
+                      placeholder="Enter your email"
+                    />
+                    <button
+                      type="submit"
+                      className="rounded-lg bg-primary px-6 py-4 font-medium text-[#262626]"
+                    >
+                      Join the waitlist
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Background Images */}
+
         <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="450"
@@ -104,7 +143,7 @@ const Hero = () => {
                 y2="288"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" />
+                <stop stopColor="#001484" />
                 <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
               </linearGradient>
               <radialGradient
@@ -115,8 +154,8 @@ const Hero = () => {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(17.9997 182) rotate(90) scale(18)"
               >
-                <stop offset="0.145833" stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.08" />
+                <stop offset="0.145833" stopColor="#FFE78D" stopOpacity="0" />
+                <stop offset="1" stopColor="#FFE78D" stopOpacity="0.08" />
               </radialGradient>
               <radialGradient
                 id="paint2_radial_25:217"
@@ -126,8 +165,8 @@ const Hero = () => {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(76.9997 288) rotate(90) scale(34)"
               >
-                <stop offset="0.145833" stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0.08" />
+                <stop offset="0.145833" stopColor="#FFE78D" stopOpacity="0" />
+                <stop offset="1" stopColor="##FFE78D" stopOpacity="0.08" />
               </radialGradient>
               <linearGradient
                 id="paint3_linear_25:217"
@@ -137,7 +176,7 @@ const Hero = () => {
                 y2="351.421"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" />
+                <stop stopColor="#001484" />
                 <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
               </linearGradient>
               <linearGradient
@@ -148,7 +187,7 @@ const Hero = () => {
                 y2="448.882"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" />
+                <stop stopColor="#FFE78D" />
                 <stop offset="1" stopColor="white" stopOpacity="0" />
               </linearGradient>
               <linearGradient
@@ -159,7 +198,7 @@ const Hero = () => {
                 y2="470"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" />
+                <stop stopColor="#FFE78D" />
                 <stop offset="1" stopColor="white" stopOpacity="0" />
               </linearGradient>
               <linearGradient
@@ -170,8 +209,8 @@ const Hero = () => {
                 y2="338.63"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+                <stop stopColor="#FFE78D" />
+                <stop offset="1" stopColor="#FFE78D" stopOpacity="0" />
               </linearGradient>
             </defs>
           </svg>
@@ -229,8 +268,8 @@ const Hero = () => {
                 y2="212.24"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
+                <stop stopColor="#FFE78D" stopOpacity="0" />
+                <stop offset="1" stopColor="#FFE78D" />
               </linearGradient>
               <linearGradient
                 id="paint2_linear_25:218"
@@ -240,8 +279,8 @@ const Hero = () => {
                 y2="212.24"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
+                <stop stopColor="#FFE78D" stopOpacity="0" />
+                <stop offset="1" stopColor="#FFE78D" />
               </linearGradient>
               <linearGradient
                 id="paint3_linear_25:218"
@@ -262,8 +301,8 @@ const Hero = () => {
                 y2="99.5816"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" />
-                <stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+                <stop stopColor="#FFE78D" />
+                <stop offset="1" stopColor="#FFE78D" stopOpacity="0" />
               </linearGradient>
               <radialGradient
                 id="paint5_radial_25:218"
